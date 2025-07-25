@@ -1,30 +1,37 @@
-# Adobe-India-Hackathon25
-# Challenge 1A – PDF Structure Extraction
+# Adobe-India-Hackathon25  
+## Challenge 1A – PDF Structure Extraction
 
-This is my solution for Challenge 1A of the Adobe Hackathon.  
-The goal was to extract the structural outline (like headings and subheadings) from a given PDF file and convert it into a clean, hierarchical JSON format.
+This repository contains my solution for **Challenge 1A** of the Adobe India Hackathon 2025.
+
+The goal was to extract the structural outline (like headings and subheadings) from a given PDF file and convert it into a clean, hierarchical **JSON** format.
 
 ---
 
-##  What I Did
+## ✅ What I Did
 
-I used **PyMuPDF** to read the PDF and analyze the font size and weight of each text block to identify headings.
+I used **PyMuPDF** (`fitz`) to read and analyze each page of the PDF:
 
 - Larger fonts and bold styles are treated as higher-level headings (like H1, H2, etc.)
 - The script processes each page and captures all meaningful structure
-- Output is saved in a simple JSON format with the page number, heading level, and text
+- Output is saved in a clean JSON format with the page number, heading level, and text
 
 ---
 
-## 📁 Input Format
+## 📂 Input Format
 
-All input PDFs are placed in the `/input` directory.
+All input PDF files should be placed inside the following directory:
+
+Datasets/input/
+
+yaml
+Copy
+Edit
 
 ---
 
 ## 🧾 Output Format
 
-The output for each PDF is saved in `/output/filename.json` with this structure:
+The output for each PDF is saved in the `Datasets/output/` directory in the following structure:
 
 ```json
 {
@@ -42,25 +49,50 @@ The output for each PDF is saved in `/output/filename.json` with this structure:
     }
   ]
 }
+🐳 How to Run It (Using Docker)
+Build the Docker Image:
 
+bash
+Copy
+Edit
+docker build --platform linux/amd64 -t heading_extractor:1a .
+Run the Container:
 
-How to Run It (Docker)
- docker build --platform linux/amd64 -t heading_extractor:1a .
-docker run --rm -v ${PWD}/Datasets/input:/app/input -v ${PWD}/Datasets/output:/app/output --network none heading_extractor:1a
-
-
-Challenge - 1(a)/
+bash
+Copy
+Edit
+docker run --rm \
+  -v ${PWD}/Datasets/input:/app/input \
+  -v ${PWD}/Datasets/output:/app/output \
+  --network none \
+  heading_extractor:1a
+📁 Project Structure
+graphql
+Copy
+Edit
+Challenge-1A/
 ├── Datasets/
-│   ├── input/
-│   └── output/
-├── process_pdfs.py
-├── Dockerfile
-├── requirements.txt
-├── README.md
+│   ├── input/               # PDF input files go here
+│   └── output/              # JSON outputs will be saved here
+├── process_pdfs.py          # Main script to extract headings
+├── Dockerfile               # Docker configuration
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+📦 Dependencies
+Python 3.x
 
+PyMuPDF (fitz)
 
+Docker (for containerized execution)
 
+To install dependencies locally:
 
+bash
+Copy
+Edit
+pip install -r requirements.txt
+📝 Notes
+Heading levels are determined based on font size and weight.
 
+The model is rule-based and works well on standard document formatting.
 
----
