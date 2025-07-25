@@ -44,7 +44,7 @@ The output for each PDF is saved in the `Datasets/output/` directory in the foll
     }
   ]
 }
-...
+```
 
 🐳 How to Run It (Using Docker)
 🔧 Build the Docker Image
