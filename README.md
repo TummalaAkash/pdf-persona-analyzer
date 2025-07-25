@@ -49,15 +49,16 @@ The output for each PDF is saved in the `Datasets/output/` directory in the foll
     }
   ]
 }
-🐳 How to Run It (Using Docker)
-Build the Docker Image:
 
-bash
-Copy
-Edit
+
+## 🐳 How to Run It (Using Docker)
+
+### 🔧 Build the Docker Image
+
+```bash
 docker build --platform linux/amd64 -t heading_extractor:1a .
-Run the Container:
 
+## ▶️ Run the Container
 bash
 Copy
 Edit
@@ -66,10 +67,10 @@ docker run --rm \
   -v ${PWD}/Datasets/output:/app/output \
   --network none \
   heading_extractor:1a
+
+
 📁 Project Structure
-graphql
-Copy
-Edit
+
 Challenge-1A/
 ├── Datasets/
 │   ├── input/               # PDF input files go here
@@ -78,21 +79,14 @@ Challenge-1A/
 ├── Dockerfile               # Docker configuration
 ├── requirements.txt         # Python dependencies
 ├── README.md                # Project documentation
-📦 Dependencies
-Python 3.x
 
-PyMuPDF (fitz)
 
-Docker (for containerized execution)
 
-To install dependencies locally:
+### 💡 Notes:
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-📝 Notes
-Heading levels are determined based on font size and weight.
+- Always use triple backticks (```) followed by the language name (like `bash` or `plaintext`) to start code blocks.
+- Use triple backticks again to end the code block.
 
-The model is rule-based and works well on standard document formatting.
+---
 
+Let me know if you'd like me to edit your full `README.md` with this correction and give you the final file.
