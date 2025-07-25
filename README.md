@@ -65,7 +65,7 @@ docker run --rm \
 
 ## 📁 Project Structure
 
-
+```bash
 Challenge-1A/
 ├── Datasets/
 │   ├── input/               # PDF input files go here
@@ -74,3 +74,19 @@ Challenge-1A/
 ├── Dockerfile               # Docker configuration
 ├── requirements.txt         # Python dependencies
 ├── README.md                # Project documentation
+```
+
+## 📦 Dependencies
+
+Python 3.x
+
+PyMuPDF (fitz)
+
+Docker (for containerized execution)
+
+To install dependencies locally:
+
+```bash
+pip install -r requirements.txt
+
+```
