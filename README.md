@@ -46,25 +46,26 @@ The output for each PDF is saved in the `Datasets/output/` directory in the foll
 }
 ```
 
-🐳 How to Run It (Using Docker)
-🔧 Build the Docker Image
-bash
-Copy
-Edit
+## 🐳 How to Run It (Using Docker)
+
+### 🔧 Build the Docker Image
+
+```bash
 docker build --platform linux/amd64 -t heading_extractor:1a .
-▶️ Run the Container
-bash
-Copy
-Edit
+```
+
+## ▶️ Run the Container
+```bash
 docker run --rm \
   -v ${PWD}/Datasets/input:/app/input \
   -v ${PWD}/Datasets/output:/app/output \
   --network none \
   heading_extractor:1a
-📁 Project Structure
-plaintext
-Copy
-Edit
+```
+
+## 📁 Project Structure
+
+
 Challenge-1A/
 ├── Datasets/
 │   ├── input/               # PDF input files go here
@@ -73,16 +74,3 @@ Challenge-1A/
 ├── Dockerfile               # Docker configuration
 ├── requirements.txt         # Python dependencies
 ├── README.md                # Project documentation
-📦 Dependencies
-Python 3.x
-
-PyMuPDF (fitz)
-
-Docker (for containerized execution)
-
-To install dependencies locally:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
