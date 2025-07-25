@@ -78,13 +78,12 @@ Challenge-1A/
 
 ## 📦 Dependencies
 
-Python 3.x
+- Python 3.x  
+- PyMuPDF (`fitz`)  
+- Docker (for containerized execution)
 
-PyMuPDF (fitz)
 
-Docker (for containerized execution)
-
-To install dependencies locally:
+** To install dependencies locally:**
 
 ```bash
 pip install -r requirements.txt
