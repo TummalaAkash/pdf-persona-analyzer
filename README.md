@@ -9,7 +9,7 @@ The goal was to extract the structural outline (like headings and subheadings) f
 
 ## ✅ What I Did
 
-I used **PyMuPDF** (**fitz**) to read and analyze each page of the PDF:
+I used **PyMuPDF** (`fitz`) to read and analyze each page of the PDF:
 
 - Larger fonts and bold styles are treated as higher-level headings (like H1, H2, etc.)
 - The script processes each page and captures all meaningful structure
@@ -21,18 +21,14 @@ I used **PyMuPDF** (**fitz**) to read and analyze each page of the PDF:
 
 All input PDF files should be placed inside the following directory:
 
-Datasets/input/
 
-yaml
-Copy
-Edit
-
+---
 
 ## 🧾 Output Format
 
-The output for each PDF is saved in the **Datasets/output/** directory in the following structure:
+The output for each PDF is saved in the `Datasets/output/` directory in the following structure:
 
-## json
+```json
 {
   "title": "E0H1CM114",
   "outline": [
@@ -48,16 +44,15 @@ The output for each PDF is saved in the **Datasets/output/** directory in the fo
     }
   ]
 }
+...
 
-
-##  How to Run It (Using Docker)
-
-###  Build the Docker Image
-
-
+🐳 How to Run It (Using Docker)
+🔧 Build the Docker Image
+bash
+Copy
+Edit
 docker build --platform linux/amd64 -t heading_extractor:1a .
-
-## ▶️ Run the Container
+▶️ Run the Container
 bash
 Copy
 Edit
@@ -66,10 +61,10 @@ docker run --rm \
   -v ${PWD}/Datasets/output:/app/output \
   --network none \
   heading_extractor:1a
-
-
 📁 Project Structure
-
+plaintext
+Copy
+Edit
 Challenge-1A/
 ├── Datasets/
 │   ├── input/               # PDF input files go here
@@ -78,8 +73,16 @@ Challenge-1A/
 ├── Dockerfile               # Docker configuration
 ├── requirements.txt         # Python dependencies
 ├── README.md                # Project documentation
+📦 Dependencies
+Python 3.x
 
+PyMuPDF (fitz)
 
+Docker (for containerized execution)
 
+To install dependencies locally:
 
-
+bash
+Copy
+Edit
+pip install -r requirements.txt
