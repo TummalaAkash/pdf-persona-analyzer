@@ -9,7 +9,7 @@ The goal was to extract the structural outline (like headings and subheadings) f
 
 ## ✅ What I Did
 
-I used **PyMuPDF** (`fitz`) to read and analyze each page of the PDF:
+I used **PyMuPDF** (**fitz**) to read and analyze each page of the PDF:
 
 - Larger fonts and bold styles are treated as higher-level headings (like H1, H2, etc.)
 - The script processes each page and captures all meaningful structure
@@ -27,13 +27,12 @@ yaml
 Copy
 Edit
 
----
 
 ## 🧾 Output Format
 
-The output for each PDF is saved in the `Datasets/output/` directory in the following structure:
+The output for each PDF is saved in the **Datasets/output/** directory in the following structure:
 
-```json
+## json
 {
   "title": "E0H1CM114",
   "outline": [
@@ -51,11 +50,11 @@ The output for each PDF is saved in the `Datasets/output/` directory in the foll
 }
 
 
-## 🐳 How to Run It (Using Docker)
+##  How to Run It (Using Docker)
 
-### 🔧 Build the Docker Image
+###  Build the Docker Image
 
-```bash
+
 docker build --platform linux/amd64 -t heading_extractor:1a .
 
 ## ▶️ Run the Container
@@ -82,11 +81,5 @@ Challenge-1A/
 
 
 
-### 💡 Notes:
 
-- Always use triple backticks (```) followed by the language name (like `bash` or `plaintext`) to start code blocks.
-- Use triple backticks again to end the code block.
 
----
-
-Let me know if you'd like me to edit your full `README.md` with this correction and give you the final file.
